@@ -335,18 +335,6 @@ footer {
   padding: 40px 0 130px;
 }
 
-/* .download-panel {
-  text-align: center;
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  border-radius: 26px;
-  box-shadow: var(--glass-shadow);
-  padding: 3.5rem 2rem;
-  max-width: 640px;
-  margin: 0 auto;
-} */
 /* Main glass panel */
 .download-panel {
   display: flex;
