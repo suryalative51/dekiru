@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dekiru, Forgetting Something? Get This Thing.</title>
+    <meta
+      name="description"
+      content="Dekiru is a simple to-do list app for Android. Capture tasks, set reminders, and see what's next — without the clutter."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Decorative background blobs (purely visual, sit behind content) -->
+    <div class="bg-decor" aria-hidden="true">
+      <span class="blob blob-one"></span>
+      <span class="blob blob-two"></span>
+      <span class="blob blob-three"></span>
+    </div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header style="z-index: 999">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="#home">
+            <img
+              src="assets/images/dekiru-icon.png"
+              alt="Dekiru icon"
+              width="32"
+              height="32"
+              class="me-2"
+            />
+            Dekiru
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#download">Download</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============ HERO SECTION ============ -->
+      <section id="home" class="hero">
+        <div class="container">
+          <h1 class="motto mb-5">Dekiru</h1>
+
+          <!-- App main-menu screenshot, framed in a glass panel with a soft glow -->
+          <div class="app-frame mx-auto" data-reveal>
+            <img
+              src="assets/images/banner.png"
+              alt="BokuMoney main dashboard showing account balance and recent transactions"
+              class="app-frame-img"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Brand motto: the strongest typographic statement on the page -->
+          <h1 class="motto">Forgetting Something?<br />Get This Thing.</h1>
+
+          <!-- Short introductory copy, centered and width-constrained for readability -->
+          <p class="lead-text mx-auto">
+            Dekiru adalah aplikasi to do list simple untuk Android. Tulis tugas,
+            atur pengingat, dan lihat apa yang harus dilakukan selanjutnya.
+            Tidak menggunakan fitur yang tidak perlu, hanya yang penting untuk
+            membantu Anda tetap produktif. Nothing frustrating! Make it simple,
+            Dekiru.
+          </p>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="features">
+        <div class="container">
+          <h2 class="section-heading reveal">
+            Make it simple, Dekiru. A to-do list that just works.
+          </h2>
+
+          <!-- feature 1 -->
+          <div class="feature-card">
+            <div class="row align-items-center g-4">
+              <div class="col-12 col-md-5">
+                <div class="feature-image">
+                  <img src="assets/images/banner.png" alt="nomedia" />
+                </div>
+              </div>
+              <div class="col-12 col-md-7">
+                <h3 class="feature-title">Riwayat List</h3>
+                <p class="feature-text">
+                  Lihat semua tugas yang telah selesai & belum selesai, kapan
+                  deadlinenya, dan mana yang prioritas (warna kuning). Tidak ada
+                  yang hilang, semuanya tercatat & dikelompokkan dengan rapi
+                  berdasarkan tanggal dibuatnya.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="row align-items-center g-4">
+              <div class="col-12 col-md-5">
+                <div class="feature-image">
+                  <img src="assets/images/feature-list.png" alt="nomedia" />
+                </div>
+              </div>
+              <div class="col-12 col-md-7">
+                <h3 class="feature-title">Tambah List</h3>
+                <p class="feature-text">
+                  Tambahkan tugas baru dengan mudah, ketik kapan deadlinenya,
+                  dan tandai apakah prioritas. Semua dalam satu tempat, tanpa
+                  ribet.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="row align-items-center g-4">
+              <div class="col-12 col-md-5">
+                <div class="feature-image">
+                  <img
+                    src="assets/images/feature-wallpaper.png"
+                    alt="nomedia"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-7">
+                <h3 class="feature-title">Kustomisasi Wallpaper</h3>
+                <p class="feature-text">
+                  Pilih wallpaper yang sesuai dengan mood Anda. Dekiru hadir
+                  dengan 7 pilihan wallpaper yang bisa dipilih sesuai
+                  keinginanmu!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="row align-items-center g-4">
+              <div class="col-12 col-md-5">
+                <div class="feature-image">
+                  <img src="assets/images/feature-delete.png" alt="nomedia" />
+                </div>
+              </div>
+              <div class="col-12 col-md-7">
+                <h3 class="feature-title">Hapus List</h3>
+                <p class="feature-text">
+                  Hapus tugas yang sudah selesai atau tidak relevan lagi dengan
+                  mudah. Dekiru memberikan kemudahan untuk mengelola daftar
+                  tugas Anda tanpa repot.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download CTA -->
+      <section id="download" class="download">
+        <div class="container">
+          <div class="download-panel">
+            <div class="download-content">
+              <h2>
+                Ingin mulai planning kegiatan agar hidup lebih terstruktur?
+                Langsung saja!
+              </h2>
+
+              <p>
+                Download Dekiru sekarang. Aplikasi to-do list yang tentunya
+                sangat simple, tanpa fitur tidak penting dan berat. Aku jamin
+                deh!
+              </p>
+
+              <div class="download-actions">
+                <a
+                  href="https://github.com/suryalative51/BokuMoney/releases/latest/download/BokuMoney.v1.0.apk"
+                  class="btn btn-download"
+                  target="_blank"
+                >
+                  Download for Android
+                </a>
+              </div>
+            </div>
+
+            <img
+              src="assets/images/hand.png"
+              alt="Hand holding a phone showing the Solo app, secured by a padlock"
+              class="download-image"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Dekiru. Built for simple productivity.
+          Made with ❤️ by Surya.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap bundle (includes Popper, needed for navbar collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

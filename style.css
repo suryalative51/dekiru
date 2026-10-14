@@ -1,0 +1,505 @@
+/* ==========================================================================
+   Dekiru — custom styles
+   Bootstrap 5 provides grid/layout/utilities; everything visually
+   distinctive (glassmorphism, gradients, type, motion) lives here.
+   ========================================================================== */
+
+:root {
+  /* Color tokens */
+  --navy-deep: #081b2e;
+  --navy-mid: #0e2a4a;
+  --blue-primary: #1c6fd1;
+  --blue-accent: #3da5f5;
+  --blue-light: #7ec8fa;
+  --text-primary: #f4f8ff;
+  --text-secondary: #afc2d9;
+
+  --glass-bg: rgba(255, 255, 255, 0.055);
+  --glass-bg-strong: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-shadow: 0 20px 60px rgba(2, 10, 22, 0.45);
+
+  /* Type */
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--navy-deep);
+  background-image: radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgba(28, 111, 209, 0.25),
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      var(--navy-deep) 0%,
+      var(--navy-mid) 55%,
+      var(--navy-deep) 100%
+    );
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1120px;
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- Decorative background blobs ---------- */
+
+.bg-decor {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+}
+
+.blob-one {
+  width: 520px;
+  height: 520px;
+  top: -180px;
+  left: -120px;
+  background: var(--blue-primary);
+}
+
+.blob-two {
+  width: 420px;
+  height: 420px;
+  top: 40%;
+  right: -160px;
+  background: var(--blue-accent);
+  opacity: 0.22;
+}
+
+.blob-three {
+  width: 460px;
+  height: 460px;
+  bottom: -220px;
+  left: 30%;
+  background: var(--blue-light);
+  opacity: 0.16;
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Navbar ---------- */
+
+.glass-nav {
+  background: rgba(8, 27, 46, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 0.85rem 0;
+}
+
+.navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s var(--ease);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--text-primary);
+}
+
+.navbar-toggler {
+  border-color: var(--glass-border);
+  padding: 0.35rem 0.6rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px var(--blue-light);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23F4F8FF' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* -------------------------------------------------------------------------
+   5. HERO SECTION
+   ------------------------------------------------------------------------- */
+.hero {
+  padding: 150px 0 110px;
+  text-align: center;
+}
+
+/* Glass frame around the app screenshot, with a soft blue glow behind it */
+.app-frame {
+  position: relative;
+  max-width: 300px;
+  padding: 14px;
+  margin-bottom: 48px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--shadow-soft);
+}
+
+.app-frame::after {
+  /* the soft glow, placed behind the frame */
+  content: "";
+  position: absolute;
+  inset: -30px;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(33, 150, 243, 0.35),
+    transparent 70%
+  );
+  filter: blur(30px);
+}
+
+.app-frame-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  aspect-ratio: 9 / 18; /* keeps the frame's shape even before a real screenshot is added */
+  object-fit: cover;
+  background: linear-gradient(160deg, var(--navy-800), var(--navy-900));
+}
+
+/* Fallback shown by script.js if the screenshot file is missing (placeholder state) */
+.app-frame-img.img-fallback {
+  object-fit: contain;
+  padding: 24px;
+}
+
+.motto {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  background: linear-gradient(
+    100deg,
+    var(--text-primary) 30%,
+    var(--blue-300) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.lead-text {
+  max-width: 620px;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+/* ---------- Section heading ---------- */
+
+.section-heading {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  max-width: 24ch;
+  margin: 0 auto 3rem;
+}
+
+/* ---------- Features ---------- */
+
+.features {
+  padding: 4rem 0 5rem;
+}
+
+.feature-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(2, 10, 22, 0.3);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+}
+
+.feature-card:last-child {
+  margin-bottom: 0;
+}
+
+@media (hover: hover) {
+  .feature-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(126, 200, 250, 0.35);
+    box-shadow: 0 24px 50px rgba(2, 10, 22, 0.4);
+  }
+}
+
+.feature-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-image .image-placeholder svg {
+  opacity: 0.8;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.feature-text {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  max-width: 48ch;
+}
+
+/* ---------- Download CTA ---------- */
+
+.download {
+  padding: 40px 0 130px;
+}
+
+/* .download-panel {
+  text-align: center;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 26px;
+  box-shadow: var(--glass-shadow);
+  padding: 3.5rem 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+} */
+/* Main glass panel */
+.download-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+
+  padding: 42px 48px;
+  box-sizing: border-box;
+
+  gap: 36px;
+
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+
+  border: 1px solid var(--glass-border);
+  border-radius: 26px;
+  box-shadow: var(--glass-shadow);
+
+  overflow: hidden;
+}
+
+/* Buttons */
+.download-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.download-panel h2 {
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin-bottom: 14px;
+}
+
+.download-panel p {
+  margin-bottom: 28px;
+}
+
+/* Phone/image */
+.download-image {
+  display: block;
+
+  width: 180px;
+  max-width: 180px;
+  height: auto;
+
+  flex: 0 0 180px;
+
+  margin: 0;
+
+  filter: drop-shadow(0 20px 40px rgba(3, 12, 24, 0.5));
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(100deg, var(--blue-primary), var(--blue-accent));
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.9rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 14px 32px rgba(28, 111, 209, 0.35);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.btn-download:hover,
+.btn-download:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(28, 111, 209, 0.45);
+  color: #fff;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--glass-border);
+  padding: 1.75rem 0;
+}
+
+.site-footer p {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ---------- Responsive adjustments ---------- */
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding: 7rem 0 3.5rem;
+  }
+
+  .feature-card {
+    padding: 1.4rem;
+  }
+
+  .download-panel {
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 32px 20px;
+
+    gap: 24px;
+
+    text-align: center;
+  }
+
+  .download-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .download-image {
+    order: -1;
+
+    width: 120px;
+    max-width: 120px;
+
+    flex: 0 0 auto;
+
+    margin: 0 auto;
+  }
+
+  .download-panel h2 {
+    font-size: 1.5rem;
+  }
+
+  .download-panel p {
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+  }
+
+  .download-actions {
+    width: 100%;
+
+    align-items: center;
+    gap: 12px;
+  }
+
+  .download-panel {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
